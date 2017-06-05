@@ -5,21 +5,10 @@ using System.Collections.Generic;
 
 public class UE4GitPluginDevTarget : TargetRules
 {
-	public UE4GitPluginDevTarget(TargetInfo Target)
+	public UE4GitPluginDevTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-	}
 
-	//
-	// TargetRules interface.
-	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.AddRange( new string[] { "UE4GitPluginDev" } );
+		ExtraModuleNames.AddRange( new string[] { "UE4GitPluginDev" } );
 	}
 }

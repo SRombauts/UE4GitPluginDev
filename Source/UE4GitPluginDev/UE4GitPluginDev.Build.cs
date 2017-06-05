@@ -4,7 +4,7 @@ using UnrealBuildTool;
 
 public class UE4GitPluginDev : ModuleRules
 {
-	public UE4GitPluginDev(TargetInfo Target)
+	public UE4GitPluginDev(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
