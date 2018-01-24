@@ -3,6 +3,7 @@ DerivedDataCache
 Intermediate
 Plugins
 Saved
+.vs
 *.VC.db
 *.opensdf
 *.opendb
