@@ -10,5 +10,7 @@ public class UE4GitPluginDevEditorTarget : TargetRules
 		Type = TargetType.Editor;
 
 		ExtraModuleNames.AddRange( new string[] { "UE4GitPluginDev" } );
+
+		// bUseUnityBuild = false;
 	}
 }
