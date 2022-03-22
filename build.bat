@@ -5,10 +5,21 @@ set ROOTPATH=%~dp0
 
 pushd %ROOTPATH%
 
-set UEPATH=C:\Program Files\Epic Games\UE_4.27\
-set UBT="%UEPATH%Engine\Binaries\DotNET\UnrealBuildTool.exe"
-set PROJECT=UE4GitPluginDev
-set UPROJECT="%ROOTPATH%\%PROJECT%.uproject"
+set UBT="C:\Program Files\Epic Games\UE_4.27\Engine\Binaries\DotNET\UnrealBuildTool.exe"
+if not exist %UBT% (
+    echo %UBT% not found
+    exit /b
+)
+
+for %%a in (*.uproject) do set "UPROJECT=%CD%\%%a"
+if not defined UPROJECT (
+    echo *.uproject file not found
+    exit /b
+)
+
+for %%i in ("%UPROJECT%") do (
+  set PROJECT=%%~ni
+)
 
 echo on
 %UBT% %UPROJECT% Win64 Development %PROJECT%Editor
