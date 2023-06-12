@@ -16,7 +16,7 @@ if [%ENGINE%] == [] (
 ) else if "%ENGINE%" == "4" (
   set UBT="C:\Program Files\Epic Games\UE_4.27\Engine\Binaries\DotNET\UnrealBuildTool.exe"
 ) else if "%ENGINE%" == "5" (
-  set UBT="C:\Program Files\Epic Games\UE_5.0\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe"
+  set UBT="C:\Program Files\Epic Games\UE_5.1\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe"
 ) else (
   echo Engine version '%ENGINE%' need to be 4 or 5
   exit /b 1
